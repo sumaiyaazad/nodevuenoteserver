@@ -5,15 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js"
+    "start": "node index.js",
+    "dev": "env-cmd -f ./server/config/dev.env node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "mongodb": "^3.5.3",
     "mongoose": "^5.9.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0"
   }
 }
