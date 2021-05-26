@@ -3,9 +3,11 @@ const express=require('express');
 const bodyParser=require('body-parser');
 const {ObjectID}=require('mongodb');
 const cors = require('cors');
+console.log("MONGOURL: "+process.env.MONGO_URL);
 var {mongoose}=require('./server/db/mongoose');
 var {Note}=require('./server/models/note');
 var {User}=require('./server/models/user');
+
 
 var app=express();
 
@@ -259,6 +261,9 @@ app.post('/editnote',(req,res)=>{
  });
 });
 
+app.get('/', (req, res)=> {
+    res.send('hello world')
+});
 
 app.listen(port,()=>{
   console.log('Node.js api Started on port ',port);
