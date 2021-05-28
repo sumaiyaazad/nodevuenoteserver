@@ -2,7 +2,8 @@
 var mongoose=require('mongoose');
 
 mongoose.Promise=global.Promise;
-let connectionString=process.env.MONGO_URL|| 'mongodb://mongo:27017/Keep';
+let host=location.host.split(':')[0]
+let connectionString=process.env.MONGO_URL|| 'mongodb://'+host+':27017/Notebook';
 //mongoose.connect('mongodb://localhost:27017/Keep');
 //mongodb+srv://taaha:<password>@cluster0-0zww4.mongodb.net/test?retryWrites=true&w=majority
 console.log(connectionString);
